@@ -79,17 +79,13 @@ Exécuter les cellules dans l'ordre pour reproduire l'ensemble de l'analyse.
 Cette fonctionnalité complète la Partie 5 (comptage des états avec `countplot()`) en exploitant `catplot()` pour produire une grille de sous-graphiques facettés — un par état de capteur (OK, ALERTE, ERREUR) — avec une échelle verticale indépendante pour chacun (`sharey=False`). Cette approche permet de comparer la répartition des bâtiments sur chaque état sans que la catégorie majoritaire (OK) n'écrase visuellement les états plus rares (ALERTE, ERREUR), offrant ainsi une lecture plus fine et directement exploitable pour identifier les bâtiments à surveiller en priorité.
 
 ```python
-sns.catplot(
-    data=df, x="batiment", col="etat", kind="count",
-    sharey=False, height=4, aspect=0.8
-)
+sns.catplot(data=df, x="batiment", col="etat",hue="batiment", kind="count")
 plt.suptitle("Distribution des états par bâtiment", y=1.05)
-plt.show()
 ```
 
 ## Auteur
 
-Alou (bl4ckcyph3er) – Master 2 Sécurité des Systèmes Embarqués, UCAD
+Alassane Mbengue (bl4ckcyph3er) – Master 2 Sécurité des Systèmes Embarqués, UCAD, Sonatel Académie
 
 ## Licence
 
